@@ -13,5 +13,5 @@ npm i -D webpack babel-core babel-loader babel-preset-react babel-preset-es2015
 
 ## Build
 ```
-webpack -w
+webpack
 ```

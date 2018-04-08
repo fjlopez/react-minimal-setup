@@ -5,15 +5,30 @@ class App extends React.Component {
     super(props)
 
     this.state = {
-      who: 'World'
+      who: 'World',
+      date: new Date().toString()
     }
+  }
+
+  componentDidMount() {
+    this.countdown = setInterval(this.tick.bind(this), 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.countdown);
+  }
+
+  tick() {
+    this.setState({
+      date: new Date().toString()
+    });
   }
 
   render () {
     return (
-      <div>
+      <div class="demo">
         <h1>App component</h1>
-        <p>Hello, {this.state.who}!</p>
+        <p>Hello, {this.state.who} at {this.state.date}!</p>
       </div>
     )
   }
